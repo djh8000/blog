@@ -1,5 +1,7 @@
 <template>
   <section class="container">
+    <canvas id="lizi-cv"></canvas>
+    <canvas id="zhihu-cv"></canvas>
     <div>
       <app-logo/>
       <h1 class="title">
@@ -10,13 +12,13 @@
       </h2>
       <h3>正在努力建设中...</h3>
     </div>
-    <canvas id="Mycanvans"></canvas>
   </section>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
-import Mycanvans from '~/plugins/zhihu-cv.js'
+import zhihu from '~/plugins/zhihu-cv.js'
+import lizi from '~/plugins/lizi-cv.js'
 
 export default {
   components: {
@@ -24,15 +26,16 @@ export default {
   },
   mounted () {
     this.$nextTick(function () {
-      Mycanvans('Mycanvans')
+      zhihu('zhihu-cv')
+      lizi('lizi-cv')
     })
   }
 }
 </script>
 
 <style>
-#Mycanvans{
-  position: absolute;
+canvas{
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;

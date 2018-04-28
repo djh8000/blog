@@ -1,11 +1,10 @@
-export default function (el) {
+export default function(el) {
   //定义画布宽高和生成点的个数
   var WIDTH = window.innerWidth,
-    HEIGHT = window.innerHeight,
-    POINT = 35;
+      HEIGHT = window.innerHeight,
+      POINT = 35;
 
   var canvas = document.getElementById(el);
-  console.log(canvas)
   canvas.width = WIDTH,
   canvas.height = HEIGHT;
   var context = canvas.getContext('2d');
@@ -53,7 +52,6 @@ export default function (el) {
     cxt.lineTo(line.closeX, line.closeY)
     cxt.closePath()
     cxt.stroke();
-
   }
   //每帧绘制
   function draw() {
