@@ -3,36 +3,40 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        myblog
+        djh-blog
       </h1>
       <h2 class="subtitle">
-        djh-blog
+        董军浩的个人网站
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+      <h3>正在努力建设中...</h3>
     </div>
+    <canvas id="Mycanvans"></canvas>
   </section>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+import Mycanvans from '~/plugins/zhihu-cv.js'
 
 export default {
   components: {
     AppLogo
+  },
+  mounted () {
+    this.$nextTick(function () {
+      Mycanvans('Mycanvans')
+    })
   }
 }
 </script>
 
 <style>
+#Mycanvans{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 .container {
   min-height: 100vh;
   display: flex;
